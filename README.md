@@ -2,7 +2,9 @@
 
 A Chrome extension that adds a second chat column showing only the Twitch messages worth reading.
 
-![The Jev Chat column beside a live Twitch chat](docs/screenshot.png)
+![Jev Chat for Twitch filtering a live chat](docs/demo.gif)
+
+*ibai, 74,000 viewers, recorded 2026-09-19, played at 3x. Helpful, then Questions, then Funny.*
 
 ## Install in two minutes
 
@@ -33,6 +35,8 @@ Sign up at [typesafe.ai](https://typesafe.ai) and create an API key. The key sta
 - Click a row to see the full probability distribution, the category and the model id.
 - **Narrow chat** in the column header shrinks Twitch's own chat so both columns fit.
 - Switching intent re-sorts what you already have. It costs nothing extra.
+
+![The Jev Chat column beside a live Twitch chat](docs/screenshot.png)
 
 ## What leaves your machine
 
