@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Jev Chat for Twitch",
+  "version": "0.1.0",
+  "description": "Adds a Jev Chat column beside a live Twitch chat that shows only the messages Jev selects for the intent you pick. Bring your own TypeSafe key.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://www.twitch.tv/*",
+    "https://irc-ws.chat.twitch.tv/*",
+    "https://api.typesafe.ai/*"
+  ],
+  "background": {"service_worker": "background.mjs", "type": "module"},
+  "content_scripts": [
+    {"matches": ["https://www.twitch.tv/*"], "js": ["content.mjs"], "run_at": "document_idle"}
+  ],
+  "web_accessible_resources": [
+    {"resources": ["panel.mjs", "irc.mjs", "jev.mjs", "chat-policy.mjs", "panel.css"], "matches": ["https://www.twitch.tv/*"]}
+  ],
+  "options_page": "options.html",
+  "action": {"default_title": "Jev Chat for Twitch settings"}
+}

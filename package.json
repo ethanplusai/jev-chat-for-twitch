@@ -1,0 +1,12 @@
+{
+  "name": "jev-chat-for-twitch",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "pack": "node scripts/pack.mjs"
+  }
+}

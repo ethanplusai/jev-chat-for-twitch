@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jev Chat for Twitch settings</title>
+<style>
+ body{font:14px/1.6 system-ui,sans-serif;background:#0e0e10;color:#efeff1;margin:0;padding:28px;max-width:620px}
+ h1{font-size:19px;margin:0 0 6px}
+ p{color:#adadb8;font-size:12px}
+ label{display:block;margin:18px 0 6px;font-weight:600;font-size:13px}
+ input{width:100%;box-sizing:border-box;padding:9px 11px;font-size:13px;background:#26262c;border:1px solid #3a3a44;border-radius:6px;color:#efeff1}
+ button{margin-top:20px;padding:9px 18px;font-size:13px;border:0;border-radius:6px;background:#a970ff;color:#fff;font-weight:600;cursor:pointer}
+ button.secondary{background:#26262c;border:1px solid #3a3a44;color:#d4d4dd;margin-left:8px}
+ .hint{margin-top:18px;font-size:12px;color:#adadb8}
+ small{display:block;color:#8f8f9d;font-size:11px;margin-top:5px}
+ #status{margin-top:14px;font-size:12px;color:#9ed0e0;min-height:18px}
+ .note{border:1px solid #2e2e35;border-radius:8px;padding:12px 14px;margin-top:24px;font-size:11px;color:#8f8f9d}
+</style>
+</head>
+<body>
+<h1>Jev Chat for Twitch</h1>
+<p>Your key is stored in this browser profile only, sent only to api.typesafe.ai, and never logged.</p>
+<label for="key">TypeSafe API key</label>
+<input id="key" type="password" autocomplete="off" spellcheck="false" placeholder="sk-...">
+<small>Stored in chrome.storage.local. Clear the field and save to remove it.</small>
+<label for="cap">Spend cap per hour (USD)</label>
+<input id="cap" type="number" min="0.01" max="50" step="0.01">
+<small>Estimated at $0.042 per million input tokens. When the cap is reached the column stops calling Jev and says so.</small>
+<label for="rate">Maximum messages per second to assess</label>
+<input id="rate" type="number" min="1" max="60" step="1">
+<small>Messages above this rate are counted as unassessed. They are never shown as selected.</small>
+<button id="save">Save</button>
+<button id="test" class="secondary">Test key</button>
+<p id="status" role="status"></p>
+<p class="hint"><strong>Back to Twitch:</strong> open any live channel at <code>https://www.twitch.tv/&lt;channel&gt;</code> and the Jev Chat column appears on the right. The gear in that column brings you back here.</p>
+<div class="note">Message text and usernames from the channel you are watching are sent to TypeSafe under your own account. Nothing is persisted except these settings.</div>
+<script type="module" src="options.mjs"></script>
+</body>
+</html>
